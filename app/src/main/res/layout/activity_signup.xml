@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignupActivity">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="15dp"
+                android:id="@+id/backbtn"
+                android:src="@drawable/backbtn">
+
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Signup"
+                android:textSize="20dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="50dp"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEE"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/edittextback"
+                android:hint="Name"
+                android:id="@+id/user_name"
+                android:paddingLeft="15dp"
+                android:layout_margin="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/edittextback"
+                android:hint="Email Address"
+                android:id="@+id/user_email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="15dp"
+                android:layout_margin="10dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/edittextback"
+                android:hint="Password"
+                android:id="@+id/user_pass"
+                android:inputType="textPassword"
+                android:paddingLeft="15dp"
+                android:layout_margin="10dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/buttonback"
+                android:layout_margin="10dp"
+                android:id="@+id/signupbtn"
+                android:text="Sign me up!"
+                android:textColor="#FFF"
+                ></Button>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By clicking signup you must agree to our Terms &amp; condition and Privacy Policy"
+                android:layout_margin="10dp"
+                android:gravity="center"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an Account?"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/loginbtn"
+                    android:text=" Sign In"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/sub_pop"
+        android:background="#AE060D35">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:padding="30dp"
+            android:orientation="vertical"
+            android:background="@drawable/card">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select your Subscription"
+                android:textSize="20dp">
+
+            </TextView>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_line"
+                android:text="Continue with FREE"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:id="@+id/sub_free"
+                android:textColor="@color/colorPrimary"
+                ></Button>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:id="@+id/sub_paid"
+                android:background="@drawable/button_line"
+                android:text="Continue with PAID $9.99/mo"
+                android:textColor="@color/colorPrimary"
+                ></Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

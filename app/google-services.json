@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "230725763467",
+    "firebase_url": "https://frenchapp-7b612.firebaseio.com",
+    "project_id": "frenchapp-7b612",
+    "storage_bucket": "frenchapp-7b612.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230725763467:android:a15ba2b25242fc3eae6f8e",
+        "android_client_info": {
+          "package_name": "com.example.frenchapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230725763467-iil60mfhhi1aktrs4t85sgh42h4g3sq2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.frenchapp",
+            "certificate_hash": "b414b1e1760643896cd8e82ed67100eea9dfec78"
+          }
+        },
+        {
+          "client_id": "230725763467-d58brrilcsjn8qvsogpb932ubqmcdgtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_WTOBYZRi4z7-iktRfPQaFo8VhtB21io"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230725763467-d58brrilcsjn8qvsogpb932ubqmcdgtv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
