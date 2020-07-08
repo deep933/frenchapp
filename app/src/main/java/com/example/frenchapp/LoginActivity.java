@@ -36,6 +36,12 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+
+        if(mAuth.getCurrentUser()!=null){
+            Intent home = new Intent(LoginActivity.this,Home.class);
+            startActivity(home);
+        }
+
         loginbtn = findViewById(R.id.loginbtn);
         signupbtn = findViewById(R.id.signupbtn);
         backbtn = findViewById(R.id.backbtn);
