@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,6 +23,8 @@ public class Home extends AppCompatActivity {
 
     private ImageView profile;
 
+    private LinearLayout course;
+
 
 
     @Override
@@ -35,6 +38,16 @@ public class Home extends AppCompatActivity {
 
         profile = findViewById(R.id.profile);
 
+
+        course = findViewById(R.id.course);
+
+        course.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home.this,Quiz.class);
+                startActivity(in);
+            }
+        });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
