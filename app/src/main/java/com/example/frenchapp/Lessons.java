@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +31,7 @@ public class Lessons extends AppCompatActivity {
     private ImageView backbtn;
     private CustomAdapter adapter;
     private LinearLayout quiz1,quiz2;
+    private TextView courseTitle;
 
     private ListView listview;
 
@@ -39,16 +41,16 @@ public class Lessons extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
 
-
-
+        Intent in = getIntent();
 
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         listview = findViewById(R.id.list_view);
-
-
         backbtn = findViewById(R.id.backbtn);
+
+        courseTitle = findViewById(R.id.courseTitle);
+        courseTitle.setText(in.getStringExtra("title"));
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +66,7 @@ public class Lessons extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(Lessons.this,Quiz.class);
+                in.putExtra("quiz_no","quiz1");
                 startActivity(in);
             }
         });
@@ -72,6 +75,7 @@ public class Lessons extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(Lessons.this,Quiz.class);
+                in.putExtra("quiz_no","quiz2");
                 startActivity(in);
             }
         });
