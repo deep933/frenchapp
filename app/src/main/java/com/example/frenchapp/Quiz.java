@@ -116,7 +116,6 @@ public class Quiz extends AppCompatActivity {
             resultcard.setVisibility(View.VISIBLE);
             quizcard.setVisibility(View.GONE);
             hint.setVisibility(View.GONE);
-            mDatabase.child("Score").child(mAuth.getUid()).
 
         }
         else {
