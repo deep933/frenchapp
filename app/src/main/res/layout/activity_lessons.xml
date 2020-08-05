@@ -25,7 +25,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Course"
+                android:text="Basic Course"
+                android:id="@+id/courseTitle"
                 android:textSize="20dp"
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_marginRight="50dp"></TextView>

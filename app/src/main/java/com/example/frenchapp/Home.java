@@ -45,6 +45,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(Home.this,Lessons.class);
+                in.putExtra("title","Basic Course");
                 startActivity(in);
             }
         });

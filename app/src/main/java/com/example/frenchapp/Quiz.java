@@ -93,18 +93,18 @@ public class Quiz extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(hintt!=null){
-                    new AlertDialog.Builder(Quiz.this)
-                            .setTitle("Hint !!")
-                            .setMessage(hintt)
+                new AlertDialog.Builder(Quiz.this)
+                        .setTitle("Hint !!")
+                        .setMessage(hintt)
 
-                            // Specifying a listener allows you to take an action before dismissing the dialog.
-                            // The dialog is automatically dismissed when a dialog button is clicked.
-                            .setPositiveButton("GOT IT!!", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                }
-                            }).setIcon(android.R.drawable.ic_dialog_alert)
-                            .show();
-                }}
+                        // Specifying a listener allows you to take an action before dismissing the dialog.
+                        // The dialog is automatically dismissed when a dialog button is clicked.
+                        .setPositiveButton("GOT IT!!", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        }).setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+            }}
         });
 
 
@@ -116,7 +116,7 @@ public class Quiz extends AppCompatActivity {
             resultcard.setVisibility(View.VISIBLE);
             quizcard.setVisibility(View.GONE);
             hint.setVisibility(View.GONE);
-
+            mDatabase.child("Score").child(mAuth.getUid()).child("quiz_score").child(quiz_no).setValue(String.valueOf(count_correct*100));
         }
         else {
             progressBar.setProgress(progressBar.getProgress() + 10);

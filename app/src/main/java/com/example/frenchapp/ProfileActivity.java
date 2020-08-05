@@ -26,6 +26,8 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private ImageView backbtn;
+    private Button profile_Edit;
+    private TextView score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,18 @@ public class ProfileActivity extends AppCompatActivity {
 
         user_email = findViewById(R.id.user_email);
         user_name = findViewById(R.id.user_name);
+        score = findViewById(R.id.score);
+        profile_Edit = findViewById(R.id.profile_edit);
+
+        profile_Edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(ProfileActivity.this,ProfileEdit.class);
+                startActivity(in);
+            }
+        });
+
+
 
         backbtn = findViewById(R.id.backbtn);
 
