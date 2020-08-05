@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ public class Quiz extends AppCompatActivity {
     private TextView question;
     private String hintt;
     private ProgressBar progressBar;
+    private LinearLayout quizcard,resultcard;
 
     private int q_no = 1;
 
@@ -62,6 +64,11 @@ public class Quiz extends AppCompatActivity {
         question_no = findViewById(R.id.question_no);
 
         progressBar = findViewById(R.id.progress_bar);
+        quizcard = findViewById(R.id.quizcard);
+        resultcard = findViewById(R.id.resultcard);
+
+        resultcard.setVisibility(View.GONE);
+        quizcard.setVisibility(View.VISIBLE);
 
         op1 = findViewById(R.id.op1);
         op2 = findViewById(R.id.op2);
@@ -93,6 +100,11 @@ public class Quiz extends AppCompatActivity {
     }
 
     private void showQuestion(int no){
+        if(no==10){
+            resultcard.setVisibility(View.VISIBLE);
+            quizcard.setVisibility(View.GONE);
+
+        }
         progressBar.setProgress(progressBar.getProgress()+10);
         question_no.setText("Question "+no);
         YoYo.with(Techniques.SlideInRight)
@@ -154,7 +166,6 @@ public class Quiz extends AppCompatActivity {
             btn.setEnabled(false);
             btn.setTextColor(getResources().getColor(R.color.red));
 
-
         }
 
         Handler handler = new Handler();
@@ -166,6 +177,7 @@ public class Quiz extends AppCompatActivity {
                 btn.setBackground(getResources().getDrawable(R.drawable.btn_default));
                 btn.setTextColor(getResources().getColor(R.color.textPrimary));
                 showQuestion(q_no+1);
+                q_no= q_no+1;
 
 
             }

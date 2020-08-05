@@ -44,7 +44,7 @@ public class Home extends AppCompatActivity {
         course.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(Home.this,Quiz.class);
+                Intent in = new Intent(Home.this,Lessons.class);
                 startActivity(in);
             }
         });

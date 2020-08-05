@@ -9,14 +9,87 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="15dp"
+                android:id="@+id/backbtn"
+                android:src="@drawable/backbtn">
+
+            </ImageView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Course"
+                android:textSize="20dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="50dp"></TextView>
+        </LinearLayout>
+
 
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/list_view">
 
         </ListView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:id="@+id/quiz1"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/edittextback">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textPrimary"
+                android:text="Quiz 1"></TextView>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="-20dp"
+                android:src="@drawable/backbtn"
+                android:rotation="180"
+                android:backgroundTint="@color/textPrimary"></ImageView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:id="@+id/quiz2"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/edittextback">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textPrimary"
+                android:text="Quiz 2"></TextView>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="-20dp"
+                android:src="@drawable/backbtn"
+                android:rotation="180"
+                android:backgroundTint="@color/textPrimary"></ImageView>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
