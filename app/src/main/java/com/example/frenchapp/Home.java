@@ -23,7 +23,7 @@ public class Home extends AppCompatActivity {
 
     private ImageView profile;
 
-    private LinearLayout course;
+    private LinearLayout basic_course,inter_course,advance_course;
 
 
 
@@ -39,9 +39,11 @@ public class Home extends AppCompatActivity {
         profile = findViewById(R.id.profile);
 
 
-        course = findViewById(R.id.course);
+        basic_course = findViewById(R.id.basic_course);
+        inter_course = findViewById(R.id.inter_course);
+        advance_course = findViewById(R.id.advance_course);
 
-        course.setOnClickListener(new View.OnClickListener() {
+        basic_course.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(Home.this,Lessons.class);
@@ -66,7 +68,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
-               Toast.makeText(Home.this,"Welcome, "+user.getName(),Toast.LENGTH_LONG).show();
+                Toast.makeText(Home.this,"Welcome, "+user.getName(),Toast.LENGTH_LONG).show();
             }
 
             @Override
