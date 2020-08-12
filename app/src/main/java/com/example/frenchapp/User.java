@@ -31,8 +31,6 @@ public class User {
         this.user_id = user_id;
     }
 
-
-
     private String name;
     private String email;
     private String user_id;

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -41,6 +42,21 @@ public class ProfileActivity extends AppCompatActivity {
         user_name = findViewById(R.id.user_name);
         score = findViewById(R.id.score);
         profile_Edit = findViewById(R.id.profile_edit);
+
+        mDatabase.child("Score").child(mAuth.getCurrentUser().getUid()).child("quiz_score").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot snap : snapshot.getChildren()){
+Toast.makeText(ProfileActivity.this,String.valueOf(snap.getValue()),Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ProfileActivity.this,error.getMessage(),Toast.LENGTH_LONG).show();
+
+            }
+        });
 
         profile_Edit.setOnClickListener(new View.OnClickListener() {
             @Override
