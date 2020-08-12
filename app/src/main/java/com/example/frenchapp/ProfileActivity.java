@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +30,8 @@ public class ProfileActivity extends AppCompatActivity {
     private ImageView backbtn;
     private Button profile_Edit;
     private TextView score;
+    private Button upgrade;
+    private boolean sub = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +43,75 @@ public class ProfileActivity extends AppCompatActivity {
 
         user_email = findViewById(R.id.user_email);
         user_name = findViewById(R.id.user_name);
-        score = findViewById(R.id.score);
+        score = findViewById(R.id.your_score);
         profile_Edit = findViewById(R.id.profile_edit);
+        upgrade = findViewById(R.id.upgrade);
+
+        mDatabase.child("users").child(mAuth.getCurrentUser().getUid()).child("sub_type").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot!=null){
+                    String sub_type = snapshot.getValue().toString();
+
+
+                    if(sub_type.equals("FREE")){
+                        sub =true;
+
+                        upgrade.setText("Upgrade");
+                    }
+                    else{
+                        sub = false;
+                        upgrade.setText("Cancel Subscription");
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        upgrade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(sub) {
+                    mDatabase.child("users").child(mAuth.getCurrentUser().getUid()).child("sub_type").setValue("PAID").addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(ProfileActivity.this, "Subscription upgraded to premium", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+                else{
+                    mDatabase.child("users").child(mAuth.getCurrentUser().getUid()).child("sub_type").setValue("FREE").addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(ProfileActivity.this, "Subscription Canceled", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+        });
+
 
         mDatabase.child("Score").child(mAuth.getCurrentUser().getUid()).child("quiz_score").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot snap : snapshot.getChildren()){
-Toast.makeText(ProfileActivity.this,String.valueOf(snap.getValue()),Toast.LENGTH_LONG).show();
+                if(snapshot!=null) {
+
+                    long i =0;
+
+                    if(snapshot!=null) {
+
+                        for (DataSnapshot snap : snapshot.getChildren()) {
+                            i = i + (long) snap.getValue();
+                        }
+                    }
+
+                    score.setText(String.valueOf(i));
+
                 }
             }
 
@@ -112,4 +176,6 @@ Toast.makeText(ProfileActivity.this,String.valueOf(snap.getValue()),Toast.LENGTH
 
 
     }
+
+
 }

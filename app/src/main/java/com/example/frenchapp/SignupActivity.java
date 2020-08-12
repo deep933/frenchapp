@@ -113,6 +113,9 @@ public class SignupActivity extends AppCompatActivity {
                 startActivity(home);
             }
         });
+
+        mDatabase.child("Score").child(user.getUid()).child("quiz_score").setValue("null");
+
     }
 
     private void registerUser(final String sub_type){

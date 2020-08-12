@@ -116,7 +116,7 @@ public class Quiz extends AppCompatActivity {
             resultcard.setVisibility(View.VISIBLE);
             quizcard.setVisibility(View.GONE);
             hint.setVisibility(View.GONE);
-            mDatabase.child("Score").child(mAuth.getUid()).child("quiz_score").child(quiz_no).setValue(String.valueOf(count_correct*100));
+            mDatabase.child("Score").child(mAuth.getUid()).child("quiz_score").child(quiz_no).setValue(count_correct*100);
         }
         else {
             progressBar.setProgress(progressBar.getProgress() + 10);

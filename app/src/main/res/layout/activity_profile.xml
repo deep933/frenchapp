@@ -75,6 +75,17 @@
                 android:id="@+id/profile_edit"
                 android:paddingRight="20dp"
                 android:layout_gravity="center"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:text="Upgrade"
+                android:background="@drawable/buttonback"
+                android:textColor="#FFF"
+                android:paddingLeft="20dp"
+                android:id="@+id/upgrade"
+                android:paddingRight="20dp"
+                android:layout_gravity="center"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
