@@ -51,6 +51,24 @@ public class Home extends AppCompatActivity {
                 startActivity(in);
             }
         });
+
+        inter_course.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home.this,Lessons.class);
+                in.putExtra("title","Intermediate Course");
+                startActivity(in);
+            }
+        });
+
+        advance_course.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(Home.this,Lessons.class);
+                in.putExtra("title","Advance Course");
+                startActivity(in);
+            }
+        });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
