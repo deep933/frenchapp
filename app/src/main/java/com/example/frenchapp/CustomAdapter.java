@@ -19,6 +19,7 @@ public class CustomAdapter extends ArrayAdapter<LessonsList> implements View.OnC
     // View lookup cache
     private static class ViewHolder {
         TextView lesson_title;
+        TextView lesson_type;
 
     }
 
@@ -54,6 +55,9 @@ public class CustomAdapter extends ArrayAdapter<LessonsList> implements View.OnC
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.list_lesson, parent, false);
             viewHolder.lesson_title = (TextView) convertView.findViewById(R.id.lesson_title);
+            viewHolder.lesson_type = (TextView) convertView.findViewById(R.id.lesson_type);
+
+
 
 
             result=convertView;
@@ -67,6 +71,7 @@ public class CustomAdapter extends ArrayAdapter<LessonsList> implements View.OnC
 
 
         viewHolder.lesson_title.setText(dataSet.get(position).getLessontitle());
+        viewHolder.lesson_type.setText(dataSet.get(position).getType());
 
         // Return the completed view to render on screen
         return convertView;

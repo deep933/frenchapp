@@ -21,11 +21,22 @@ public class LessonsList {
     public LessonsList() {
     }
 
-    public LessonsList(String lessontitle, String lessonUrl) {
+    public LessonsList(String lessontitle, String lessonUrl,String lessontype) {
         Lessontitle = lessontitle;
         LessonUrl = lessonUrl;
+        type = lessontype;
     }
 
     private String Lessontitle;
     private String LessonUrl;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String lessontype) {
+        type = lessontype;
+    }
+
+    private String type;
 }
